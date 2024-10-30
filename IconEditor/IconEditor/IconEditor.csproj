@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Version>1.1.0</Version>
+    <Product>Редактор значков</Product>
+    <Copyright>Copyright © Gemiyur 2024</Copyright>
+    <ApplicationIcon>Images\CatOrange.ico</ApplicationIcon>
+    <Title></Title>
+    <Description>Простой редактор значков.
+Редактора графических файлов нет.</Description>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Company>Gemiyur</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\CatOrange\Cat-128.png" />
+    <None Remove="Images\CatOrange\Cat-16.png" />
+    <None Remove="Images\CatOrange\Cat-20.png" />
+    <None Remove="Images\CatOrange\Cat-24.png" />
+    <None Remove="Images\CatOrange\Cat-32.png" />
+    <None Remove="Images\CatOrange\Cat-40.png" />
+    <None Remove="Images\CatOrange\Cat-48.png" />
+    <None Remove="Images\CatOrange\Cat-64.png" />
+    <None Remove="Images\CatOrange\Cat-96.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\CatOrange.ico" />
+    <Resource Include="Images\CatOrange\Cat-128.png" />
+    <Resource Include="Images\CatOrange\Cat-16.png" />
+    <Resource Include="Images\CatOrange\Cat-20.png" />
+    <Resource Include="Images\CatOrange\Cat-24.png" />
+    <Resource Include="Images\CatOrange\Cat-32.png" />
+    <Resource Include="Images\CatOrange\Cat-40.png" />
+    <Resource Include="Images\CatOrange\Cat-48.png" />
+    <Resource Include="Images\CatOrange\Cat-64.png" />
+    <Resource Include="Images\CatOrange\Cat-96.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="5.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.6" />
+  </ItemGroup>
+
+</Project>

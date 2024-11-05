@@ -47,17 +47,6 @@
                         Executed="DeleteImage_Executed"
                         CanExecute="DeleteImage_CanExecute" />
 
-        <CommandBinding Command="local:AppCommands.CopyImage"
-                        Executed="CopyImage_Executed"
-                        CanExecute="CopyImage_CanExecute" />
-
-        <CommandBinding Command="local:AppCommands.CutImage"
-                        Executed="CutImage_Executed"
-                        CanExecute="CutImage_CanExecute" />
-
-        <CommandBinding Command="local:AppCommands.PasteImage"
-                        Executed="PasteImage_Executed"
-                        CanExecute="PasteImage_CanExecute" />
 
         <CommandBinding Command="local:AppCommands.ExportImage"
                         Executed="ExportImage_Executed"
@@ -114,23 +103,6 @@
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
-                <!-- Закомментировано, ибо в первой версии работа с буфером обмена не реализована -->
-                <!--<MenuItem Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.CopyImage">
-                    <MenuItem.Icon>
-                        <iconPacks:PackIconFontAwesome Kind="CopyRegular" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.CutImage">
-                    <MenuItem.Icon>
-                        <iconPacks:PackIconIonicons Kind="CutiOS" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.PasteImage">
-                    <MenuItem.Icon>
-                        <iconPacks:PackIconModern Kind="ClipboardPaste" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator />-->
                 <MenuItem Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.ExportImage">
                     <MenuItem.Icon>
                         <iconPacks:PackIconForkAwesome Kind="SignOut" />
@@ -166,17 +138,6 @@
                     <iconPacks:PackIconModern Kind="Delete" Style="{StaticResource ToolBarIconStyle}" />
                 </Button>
                 <Separator />
-                <!-- Закомментировано, ибо в первой версии работа с буфером обмена не реализована -->
-                <!--<Button Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.CopyImage">
-                    <iconPacks:PackIconFontAwesome Kind="CopyRegular" Style="{StaticResource ToolBarIconStyle}" />
-                </Button>
-                <Button Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.CutImage">
-                    <iconPacks:PackIconIonicons Kind="CutiOS" Style="{StaticResource ToolBarIconStyle}" />
-                </Button>
-                <Button Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.PasteImage">
-                    <iconPacks:PackIconModern Kind="ClipboardPaste" Style="{StaticResource ToolBarIconStyle}" />
-                </Button>
-                <Separator />-->
                 <Button Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.ExportImage">
                     <iconPacks:PackIconForkAwesome Kind="SignOut" Style="{StaticResource ToolBarIconStyle}" />
                 </Button>

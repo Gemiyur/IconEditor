@@ -14,7 +14,6 @@ namespace IconEditor
 
     // TODO: Сделать сохранение масштаба экрана в настройках. Других настроек пока не просматривается.
     // TODO: Сделать показ курсора ожидания там, где это надо.
-    // TODO: Сделать работу с буфером обмена. Пункты меню и кнопки панели инструментов закомментированы.
 
     #endregion
 
@@ -479,27 +478,6 @@ namespace IconEditor
             FrameViews.RemoveAll(views.Contains);
             UpdateImagesListBox();
             IconChanged = true;
-        }
-
-        private void CopyImage_CanExecute(object sender, CanExecuteRoutedEventArgs e) => e.CanExecute = false;
-
-        private void CopyImage_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-
-        }
-
-        private void CutImage_CanExecute(object sender, CanExecuteRoutedEventArgs e) => e.CanExecute = false;
-
-        private void CutImage_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-
-        }
-
-        private void PasteImage_CanExecute(object sender, CanExecuteRoutedEventArgs e) => e.CanExecute = false;
-
-        private void PasteImage_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-
         }
 
         private void ExportImage_CanExecute(object sender, CanExecuteRoutedEventArgs e) =>

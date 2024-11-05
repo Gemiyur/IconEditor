@@ -25,6 +25,21 @@ namespace IconEditor
         public static readonly List<double> Scales = [1.0, 1.25, 1.5, 1.75];
 
         /// <summary>
+        /// Возвращает логическое значение из логического значения, допускающего неопределённое значение.
+        /// </summary>
+        /// <param name="value">Логическое значение, допускающее неопределённое значение.</param>
+        /// <returns>Логическое значение.</returns>
+        public static bool SimpleBool(bool? value) => value ?? false;
+
+        /// <summary>
+        /// Аналог System.Windows.Forms.Application.DoEvents.
+        /// </summary>
+        public static void DoEvents()
+        {
+            Current?.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate { }));
+        }
+
+        /// <summary>
         /// Возвращает ближайший меньший размер изображения для указанного размера изображения.
         /// </summary>
         /// <param name="size">Размер изображения.</param>
@@ -38,14 +53,6 @@ namespace IconEditor
             if (size > ImageSizes.Last())
                 return ImageSizes.Last();
             return ImageSizes.Last(x => x < size);
-        }
-
-        /// <summary>
-        /// Аналог System.Windows.Forms.Application.DoEvents.
-        /// </summary>
-        public static void DoEvents()
-        {
-            Current?.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate { }));
         }
     }
 }

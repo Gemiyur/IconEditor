@@ -93,7 +93,7 @@ namespace IconEditor.Icons
             OnPropertyChanged("BitmapFrame");
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public void OnPropertyChanged([CallerMemberName] string property = "")
         {

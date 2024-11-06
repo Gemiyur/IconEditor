@@ -12,7 +12,7 @@ namespace IconEditor
 {
     #region Задачи (TODO).
 
-    // TODO: Сделать сохранение масштаба экрана в настройках. Других настроек пока не просматривается.
+    // TODO: Сделать сохранение масштаба экрана в настройках при выходе и загрузку при запуске.
     // TODO: Сделать показ курсора ожидания там, где это надо.
 
     #endregion
@@ -71,7 +71,6 @@ namespace IconEditor
             ValidateNames = true,
             Title = "Добавить изображение",
             Filter = "Файлы изображений|*.bmp;*.dib;*.emf;*.exif;*.jfif;*.jpe;*.jpeg;*.jpg;*.png;*.rle;*.tif;*.tiff;*.wmf"
-            //Filter = "Файлы изображений|*.bmp;*.emf;*.exif;*.jpeg;*.jpg;*.png;*.tif;*.tiff;*.wmf"
         };
 
         private readonly SaveFileDialog SaveIconDialog = new()
@@ -83,8 +82,6 @@ namespace IconEditor
             Filter = "Значок|*.ico"
         };
 
-        // TODOL: При экспорте в форматы bmp, gif и jpg, если есть прозрачный цвет, то он заливается чёрным.
-
         private readonly SaveFileDialog SaveImageDialog = new()
         {
             Title = "Сохранить изображение как",
@@ -92,18 +89,12 @@ namespace IconEditor
             AddExtension = true,
             DefaultExt = ".png",
             Filter = "Portable Network Graphics|*.png|" +
-                     "Joint Photographic Experts Group|*.jpg|" +
-                     "Graphics Interchange Format|*.gif|" +
-                     "Растровое изображение|*.bmp|" +
                      "Значок|*.ico"
         };
 
         private readonly ImageFormat[] ImageFormats =
         [
             ImageFormat.Png,
-            ImageFormat.Jpeg,
-            ImageFormat.Gif,
-            ImageFormat.Bmp,
             ImageFormat.Icon
         ];
 

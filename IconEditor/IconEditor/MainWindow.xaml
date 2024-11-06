@@ -110,7 +110,11 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Справка">
-                <MenuItem Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.About" />
+                <MenuItem Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.About">
+                    <MenuItem.Icon>
+                        <iconPacks:PackIconIonicons Kind="HelpiOS" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
         </Menu>
 
@@ -140,6 +144,11 @@
                 <Separator />
                 <Button Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.ExportImage">
                     <iconPacks:PackIconForkAwesome Kind="SignOut" Style="{StaticResource ToolBarIconStyle}" />
+                </Button>
+            </ToolBar>
+            <ToolBar x:Name="HelpToolBar">
+                <Button Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.About">
+                    <iconPacks:PackIconIonicons Kind="HelpiOS" Style="{StaticResource ToolBarIconStyle}" />
                 </Button>
             </ToolBar>
             <!-- Для подбора иконок -->

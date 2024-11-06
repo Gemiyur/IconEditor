@@ -82,7 +82,7 @@ namespace IconEditor
             ExportImage = new RoutedUICommand("Экспорт...", "ExportImage", typeof(AppCommands));
 
             // Команды группы "Справка".
-            About = new RoutedUICommand("О программе", "About", typeof(AppCommands));
+            About = new RoutedUICommand("О программе...", "About", typeof(AppCommands));
         }
     }
 }

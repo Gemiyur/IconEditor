@@ -11,8 +11,7 @@
     <Copyright>Copyright © Gemiyur 2024</Copyright>
     <ApplicationIcon>Images\CatOrange.ico</ApplicationIcon>
     <Title></Title>
-    <Description>Простой редактор значков.
-Редактора графических файлов нет.</Description>
+    <Description>Простой редактор значков.</Description>
     <PackageReleaseNotes></PackageReleaseNotes>
     <Company>Gemiyur</Company>
   </PropertyGroup>

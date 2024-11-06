@@ -5,8 +5,6 @@ namespace IconEditor
 {
     #region Задачи (TODO).
 
-    // TODO: Может стоит добавить 384 и 512 в список размеров изображений?
-
     #endregion
 
     /// <summary>
@@ -17,19 +15,12 @@ namespace IconEditor
         /// <summary>
         /// Список размеров изображений.
         /// </summary>
-        public static readonly List<int> ImageSizes = [16, 20, 24, 32, 40, 48, 64, 96, 128, 192, 256];
+        public static readonly List<int> ImageSizes = [16, 20, 24, 32, 40, 48, 64, 96, 128, 192, 256, 384, 512];
 
         /// <summary>
         /// Список масштабов экрана Windows 10.
         /// </summary>
         public static readonly List<double> Scales = [1.0, 1.25, 1.5, 1.75];
-
-        /// <summary>
-        /// Возвращает логическое значение из логического значения, допускающего неопределённое значение.
-        /// </summary>
-        /// <param name="value">Логическое значение, допускающее неопределённое значение.</param>
-        /// <returns>Логическое значение.</returns>
-        public static bool SimpleBool(bool? value) => value ?? false;
 
         /// <summary>
         /// Аналог System.Windows.Forms.Application.DoEvents.
@@ -54,5 +45,12 @@ namespace IconEditor
                 return ImageSizes.Last();
             return ImageSizes.Last(x => x < size);
         }
+
+        /// <summary>
+        /// Возвращает логическое значение из логического значения, допускающего неопределённое значение.
+        /// </summary>
+        /// <param name="value">Логическое значение, допускающее неопределённое значение.</param>
+        /// <returns>Логическое значение.</returns>
+        public static bool SimpleBool(bool? value) => value ?? false;
     }
 }

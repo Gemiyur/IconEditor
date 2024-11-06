@@ -286,7 +286,7 @@
                             <!-- Масштабы экрана -->
                             <StackPanel>
                                 <!-- Заголовок -->
-                                <TextBlock Text="Масшаб экрана"
+                                <TextBlock Text="Масштаб экрана"
                                            FontWeight="Bold"
                                            HorizontalAlignment="Center"
                                            Margin="0,20,0,0" />

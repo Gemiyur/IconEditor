@@ -87,14 +87,12 @@ namespace IconEditor
             ValidateNames = true,
             AddExtension = true,
             DefaultExt = ".png",
-            Filter = "Portable Network Graphics|*.png|" +
-                     "Значок|*.ico"
+            Filter = "Portable Network Graphics|*.png"
         };
 
         private readonly ImageFormat[] ImageFormats =
         [
-            ImageFormat.Png,
-            ImageFormat.Icon
+            ImageFormat.Png
         ];
 
 

@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <Product>Редактор значков</Product>
     <Copyright>Copyright © Gemiyur 2024</Copyright>
     <ApplicationIcon>Images\CatOrange.ico</ApplicationIcon>

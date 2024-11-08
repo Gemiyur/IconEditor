@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconEditor", "IconEditor\IconEditor.csproj", "{C5AFB365-D672-497D-867C-0342597BF41C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IconEditor", "IconEditor\IconEditor.csproj", "{C5AFB365-D672-497D-867C-0342597BF41C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconsApp", "IconsApp\IconsApp.csproj", "{8570AD45-326E-4F9F-8658-2712F92FBB0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C5AFB365-D672-497D-867C-0342597BF41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5AFB365-D672-497D-867C-0342597BF41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5AFB365-D672-497D-867C-0342597BF41C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8570AD45-326E-4F9F-8658-2712F92FBB0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8570AD45-326E-4F9F-8658-2712F92FBB0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8570AD45-326E-4F9F-8658-2712F92FBB0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8570AD45-326E-4F9F-8658-2712F92FBB0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

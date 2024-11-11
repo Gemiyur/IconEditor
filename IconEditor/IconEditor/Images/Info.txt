@@ -1,0 +1,4 @@
+﻿Цвета:
+Доступные - Black
+Недоступные - DarkGray
+StatusBar - Gray

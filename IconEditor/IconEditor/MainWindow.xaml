@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IconEditor"
-        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
         Title="Редактор значков"
         Height="450" Width="750"
@@ -70,23 +69,25 @@
             <MenuItem Header="Значок">
                 <MenuItem Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.NewIcon">
                     <MenuItem.Icon>
-                        <iconPacks:PackIconFeatherIcons Kind="FilePlus" />
+                        <Image Source="Images\Buttons\Enabled\NewIcon.png" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.OpenIcon">
                     <MenuItem.Icon>
-                        <iconPacks:PackIconOcticons Kind="FileSymlinkFile" />
+                        <Image Source="Images\Buttons\Enabled\OpenIcon.png" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
-                <MenuItem Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.SaveIcon">
+                <MenuItem x:Name="SaveIconMenuItem"
+                          Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.SaveIcon">
                     <MenuItem.Icon>
-                        <iconPacks:PackIconMaterial Kind="ContentSaveOutline" />
+                        <Image Source="Images\Buttons\Enabled\SaveIcon.png" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.SaveIconAs">
+                <MenuItem x:Name="SaveIconAsMenuItem"
+                          Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.SaveIconAs">
                     <MenuItem.Icon>
-                        <iconPacks:PackIconMaterial Kind="ContentSaveAllOutline" />
+                        <Image Source="Images\Buttons\Enabled\SaveIconAs.png" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
@@ -95,25 +96,27 @@
             <MenuItem Header="Изображение">
                 <MenuItem Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.AddImage">
                     <MenuItem.Icon>
-                        <iconPacks:PackIconUnicons Kind="ImagePlusLine" />
+                        <Image Source="Images\Buttons\Enabled\AddImage.png" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.DeleteImage">
+                <MenuItem x:Name="DeleteImageMenuItem"
+                          Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.DeleteImage">
                     <MenuItem.Icon>
-                        <iconPacks:PackIconModern Kind="Delete" />
+                        <Image Source="Images\Buttons\Enabled\DeleteImage.png" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
-                <MenuItem Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.ExportImage">
+                <MenuItem x:Name="ExportImageMenuItem"
+                          Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.ExportImage">
                     <MenuItem.Icon>
-                        <iconPacks:PackIconForkAwesome Kind="SignOut" />
+                        <Image Source="Images\Buttons\Enabled\ExportImage.png" />
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="Справка">
                 <MenuItem Style="{StaticResource MenuItemStyle}" Command="local:AppCommands.About">
                     <MenuItem.Icon>
-                        <iconPacks:PackIconIonicons Kind="HelpiOS" />
+                        <Image Source="Images\Buttons\Enabled\About.png" />
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
@@ -122,48 +125,40 @@
         <ToolBarTray Grid.Row="1">
             <ToolBar x:Name="IconToolBar">
                 <Button Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.NewIcon">
-                    <iconPacks:PackIconFeatherIcons Kind="FilePlus" Style="{StaticResource ToolBarIconStyle}" />
+                    <Image Source="Images\Buttons\Enabled\NewIcon.png" Style="{StaticResource ToolBarIconStyle}" />
                 </Button>
                 <Button Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.OpenIcon">
-                    <iconPacks:PackIconOcticons Kind="FileSymlinkFile" Style="{StaticResource ToolBarIconStyle}" />
+                    <Image Source="Images\Buttons\Enabled\OpenIcon.png" Style="{StaticResource ToolBarIconStyle}" />
                 </Button>
                 <Separator />
-                <Button Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.SaveIcon">
-                    <iconPacks:PackIconMaterial Kind="ContentSaveOutline" Style="{StaticResource ToolBarIconStyle}" />
+                <Button x:Name="SaveIconButton"
+                        Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.SaveIcon">
+                    <Image Source="Images\Buttons\Enabled\SaveIcon.png" Style="{StaticResource ToolBarIconStyle}" />
                 </Button>
-                <Button Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.SaveIconAs">
-                    <iconPacks:PackIconMaterial Kind="ContentSaveAllOutline" Style="{StaticResource ToolBarIconStyle}" />
+                <Button x:Name="SaveIconAsButton"
+                        Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.SaveIconAs">
+                    <Image Source="Images\Buttons\Enabled\SaveIconAs.png" Style="{StaticResource ToolBarIconStyle}" />
                 </Button>
             </ToolBar>
             <ToolBar x:Name="ImageToolBar">
                 <Button Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.AddImage">
-                    <iconPacks:PackIconUnicons Kind="ImagePlusLine" Style="{StaticResource ToolBarIconStyle}" />
+                    <Image Source="Images\Buttons\Enabled\AddImage.png" Style="{StaticResource ToolBarIconStyle}" />
                 </Button>
-                <Button Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.DeleteImage">
-                    <iconPacks:PackIconModern Kind="Delete" Style="{StaticResource ToolBarIconStyle}" />
+                <Button x:Name="DeleteImageButton"
+                        Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.DeleteImage">
+                    <Image Source="Images\Buttons\Enabled\DeleteImage.png" Style="{StaticResource ToolBarIconStyle}" />
                 </Button>
                 <Separator />
-                <Button Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.ExportImage">
-                    <iconPacks:PackIconForkAwesome Kind="SignOut" Style="{StaticResource ToolBarIconStyle}" />
+                <Button x:Name="ExportImageButton"
+                        Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.ExportImage">
+                    <Image Source="Images\Buttons\Enabled\ExportImage.png" Style="{StaticResource ToolBarIconStyle}" />
                 </Button>
             </ToolBar>
             <ToolBar x:Name="HelpToolBar">
                 <Button Style="{StaticResource ToolBarButtonStyle}" Command="local:AppCommands.About">
-                    <iconPacks:PackIconIonicons Kind="HelpiOS" Style="{StaticResource ToolBarIconStyle}" />
+                    <Image Source="Images\Buttons\Enabled\About.png" Style="{StaticResource ToolBarIconStyle}" />
                 </Button>
             </ToolBar>
-            <!-- Для подбора иконок -->
-            <!--<ToolBar>
-                <Button Style="{StaticResource ToolBarButtonStyle}">
-
-                </Button>
-                <Button Style="{StaticResource ToolBarButtonStyle}">
-
-                </Button>
-                <Button Style="{StaticResource ToolBarButtonStyle}">
-
-                </Button>
-            </ToolBar>-->
         </ToolBarTray>
 
         <!-- Список изображений, предварительный просмотр, редактор и масштабы экрана -->
@@ -260,16 +255,16 @@
                                             Style="{StaticResource EditorButtonStyle}"
                                             ToolTip="Против часовой стрелки"
                                             Click="RotateLeftButton_Click">
-                                        <iconPacks:PackIconModern Kind="TransformRotateCounterclockwise"
-                                                                  Style="{StaticResource EditorIconStyle}" />
+                                        <Image Source="Images\Buttons\Disabled\RotateLeft.png"
+                                               Style="{StaticResource EditorIconStyle}" />
                                     </Button>
                                     <Button Grid.Row="1" Grid.Column="3"
                                             x:Name="RotateRightButton"
                                             Style="{StaticResource EditorButtonStyle}"
                                             ToolTip="По часовой стрелке"
                                             Click="RotateRightButton_Click">
-                                        <iconPacks:PackIconModern Kind="TransformRotateClockwise"
-                                                                  Style="{StaticResource EditorIconStyle}" />
+                                        <Image Source="Images\Buttons\Disabled\RotateRight.png"
+                                               Style="{StaticResource EditorIconStyle}" />
                                     </Button>
                                     <TextBlock Grid.Row="5" Grid.Column="0"
                                                Text="Отразить"
@@ -279,16 +274,16 @@
                                             Style="{StaticResource EditorButtonStyle}"
                                             ToolTip="По горизонтали"
                                             Click="FlipHorizontalButton_Click">
-                                        <iconPacks:PackIconVaadinIcons Kind="FlipH"
-                                                                       Style="{StaticResource EditorIconStyle}" />
+                                        <Image Source="Images\Buttons\Disabled\FlipHorizontal.png"
+                                               Style="{StaticResource EditorIconStyle}" />
                                     </Button>
                                     <Button Grid.Row="5" Grid.Column="3"
                                             x:Name="FlipVerticalButton"
                                             Style="{StaticResource EditorButtonStyle}"
                                             ToolTip="По вертикали"
                                             Click="FlipVerticalButton_Click">
-                                        <iconPacks:PackIconVaadinIcons Kind="FlipV"
-                                                                       Style="{StaticResource EditorIconStyle}" />
+                                        <Image Source="Images\Buttons\Disabled\FlipVertical.png"
+                                               Style="{StaticResource EditorIconStyle}" />
                                     </Button>
                                 </Grid>
                             </StackPanel>
@@ -341,7 +336,7 @@
                 <TextBlock x:Name="StatusBarSelectedCount">0</TextBlock>
             </StatusBarItem>
             <StatusBarItem HorizontalAlignment="Right">
-                <iconPacks:PackIconMaterial Kind="ResizeBottomRight" Foreground="Gray" />
+                <Image Source="Images\Buttons\Enabled\Resize.png" Height="16" Width="16" />
             </StatusBarItem>
         </StatusBar>
     </Grid>

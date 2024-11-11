@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 namespace IconEditor
@@ -29,6 +30,13 @@ namespace IconEditor
         {
             Current?.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate { }));
         }
+
+        /// <summary>
+        /// Возвращает BitmapImage из указанного файла изображения.
+        /// </summary>
+        /// <param name="path">Uri (путь) к файу.</param>
+        /// <returns></returns>
+        public static BitmapImage GetBitmap(string path) => new BitmapImage(new Uri(path, UriKind.Relative));
 
         /// <summary>
         /// Возвращает ближайший меньший размер изображения для указанного размера изображения.

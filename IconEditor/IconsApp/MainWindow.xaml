@@ -7,7 +7,7 @@
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
         Title="Подбор значков"
-        Height="150" Width="500"
+        Height="150" Width="700"
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
@@ -29,10 +29,10 @@
         <ToolBarTray Grid.Row="0">
             <ToolBar x:Name="IconToolBar">
                 <Button Style="{StaticResource ToolBarButtonStyle}">
-                    <iconPacks:PackIconFeatherIcons Kind="FilePlus" Style="{StaticResource ToolBarIconStyle}" />
+                    <iconPacks:PackIconCoolicons Kind="FileBlank" Style="{StaticResource ToolBarIconStyle}" />
                 </Button>
                 <Button Style="{StaticResource ToolBarButtonStyle}">
-                    <iconPacks:PackIconOcticons Kind="FileSymlinkFile" Style="{StaticResource ToolBarIconStyle}" />
+                    <iconPacks:PackIconOcticons Kind="FileSymlinkFile16" Style="{StaticResource ToolBarIconStyle}" />
                 </Button>
                 <Separator />
                 <Button Style="{StaticResource ToolBarButtonStyle}">
@@ -59,6 +59,18 @@
                     <iconPacks:PackIconIonicons Kind="HelpiOS" Style="{StaticResource ToolBarIconStyle}" />
                 </Button>
             </ToolBar>
+            <!-- Для подбора вариантов значков -->
+            <!--<ToolBar>
+                <Button Style="{StaticResource ToolBarButtonStyle}">
+
+                </Button>
+                <Button Style="{StaticResource ToolBarButtonStyle}">
+
+                </Button>
+                <Button Style="{StaticResource ToolBarButtonStyle}">
+
+                </Button>
+            </ToolBar>-->
         </ToolBarTray>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10,10,10,10">

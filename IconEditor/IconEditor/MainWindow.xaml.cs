@@ -270,11 +270,23 @@ namespace IconEditor
 
         private void ImagesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var EditorPanelWasEnabled = EditorPanel.IsEnabled;
             StatusBarSelectedCount.Text = ImagesListBox.SelectedItems.Count.ToString();
             if (ImagesListBox.SelectedItems.Count != 1)
             {
                 PreviewImage.Source = null;
                 EditorPanel.IsEnabled = false;
+                if (IsVisible && EditorPanelWasEnabled)
+                {
+                    ((System.Windows.Controls.Image)RotateLeftButton.Content).Source =
+                        App.GetBitmap(@"Images\Buttons\Disabled\RotateLeft.png");
+                    ((System.Windows.Controls.Image)RotateRightButton.Content).Source =
+                        App.GetBitmap(@"Images\Buttons\Disabled\RotateRight.png");
+                    ((System.Windows.Controls.Image)FlipHorizontalButton.Content).Source =
+                        App.GetBitmap(@"Images\Buttons\Disabled\FlipHorizontal.png");
+                    ((System.Windows.Controls.Image)FlipVerticalButton.Content).Source =
+                        App.GetBitmap(@"Images\Buttons\Disabled\FlipVertical.png");
+                }
                 return;
             }
             var view = (IconFrameView)ImagesListBox.SelectedItem;
@@ -290,6 +302,17 @@ namespace IconEditor
                 SizesComboBox.SelectedIndex = App.ImageSizes.IndexOf(view.Size);
             }
             EditorPanel.IsEnabled = true;
+            if (IsVisible && !EditorPanelWasEnabled)
+            {
+                ((System.Windows.Controls.Image)RotateLeftButton.Content).Source =
+                    App.GetBitmap(@"Images\Buttons\Enabled\RotateLeft.png");
+                ((System.Windows.Controls.Image)RotateRightButton.Content).Source =
+                    App.GetBitmap(@"Images\Buttons\Enabled\RotateRight.png");
+                ((System.Windows.Controls.Image)FlipHorizontalButton.Content).Source =
+                    App.GetBitmap(@"Images\Buttons\Enabled\FlipHorizontal.png");
+                ((System.Windows.Controls.Image)FlipVerticalButton.Content).Source =
+                    App.GetBitmap(@"Images\Buttons\Enabled\FlipVertical.png");
+            }
         }
 
         private int SizesComboBoxSelectedIndex = -1;
@@ -387,8 +410,16 @@ namespace IconEditor
             IconChanged = false;
         }
 
-        private void SaveIcon_CanExecute(object sender, CanExecuteRoutedEventArgs e) =>
+        private void SaveIcon_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
             e.CanExecute = FrameViews.Any() && IconChanged;
+            if (!IsVisible)
+                return;
+            var bitmap = App.GetBitmap(
+                e.CanExecute ? @"Images\Buttons\Enabled\SaveIcon.png" : @"Images\Buttons\Disabled\SaveIcon.png");
+            ((System.Windows.Controls.Image)SaveIconButton.Content).Source = bitmap;
+            ((System.Windows.Controls.Image)SaveIconMenuItem.Icon).Source = bitmap;
+        }
 
         private void SaveIcon_Executed(object sender, ExecutedRoutedEventArgs e)
         {
@@ -406,8 +437,16 @@ namespace IconEditor
             IconChanged = false;
         }
 
-        private void SaveIconAs_CanExecute(object sender, CanExecuteRoutedEventArgs e) =>
+        private void SaveIconAs_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
             e.CanExecute = FrameViews.Any();
+            if (!IsVisible)
+                return;
+            var bitmap = App.GetBitmap(
+                e.CanExecute ? @"Images\Buttons\Enabled\SaveIconAs.png" : @"Images\Buttons\Disabled\SaveIconAs.png");
+            ((System.Windows.Controls.Image)SaveIconAsButton.Content).Source = bitmap;
+            ((System.Windows.Controls.Image)SaveIconAsMenuItem.Icon).Source = bitmap;
+        }
 
         private void SaveIconAs_Executed(object sender, ExecutedRoutedEventArgs e)
         {
@@ -455,8 +494,16 @@ namespace IconEditor
             IconChanged = true;
         }
 
-        private void DeleteImage_CanExecute(object sender, CanExecuteRoutedEventArgs e) =>
+        private void DeleteImage_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
             e.CanExecute = ImagesListBox != null && ImagesListBox.SelectedItems.Count > 0;
+            if (!IsVisible)
+                return;
+            var bitmap = App.GetBitmap(
+                e.CanExecute ? @"Images\Buttons\Enabled\DeleteImage.png" : @"Images\Buttons\Disabled\DeleteImage.png");
+            ((System.Windows.Controls.Image)DeleteImageButton.Content).Source = bitmap;
+            ((System.Windows.Controls.Image)DeleteImageMenuItem.Icon).Source = bitmap;
+        }
 
         private void DeleteImage_Executed(object sender, ExecutedRoutedEventArgs e)
         {
@@ -468,8 +515,16 @@ namespace IconEditor
             IconChanged = true;
         }
 
-        private void ExportImage_CanExecute(object sender, CanExecuteRoutedEventArgs e) =>
+        private void ExportImage_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
             e.CanExecute = ImagesListBox != null && ImagesListBox.SelectedItems.Count == 1;
+            if (!IsVisible)
+                return;
+            var bitmap = App.GetBitmap(
+                e.CanExecute ? @"Images\Buttons\Enabled\ExportImage.png" : @"Images\Buttons\Disabled\ExportImage.png");
+            ((System.Windows.Controls.Image)ExportImageButton.Content).Source = bitmap;
+            ((System.Windows.Controls.Image)ExportImageMenuItem.Icon).Source = bitmap;
+        }
 
         private void ExportImage_Executed(object sender, ExecutedRoutedEventArgs e)
         {

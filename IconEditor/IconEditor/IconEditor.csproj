@@ -17,6 +17,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Buttons\Disabled\DeleteImage.png" />
+    <None Remove="Images\Buttons\Disabled\ExportImage.png" />
+    <None Remove="Images\Buttons\Disabled\FlipHorizontal.png" />
+    <None Remove="Images\Buttons\Disabled\FlipVertical.png" />
+    <None Remove="Images\Buttons\Disabled\RotateLeft.png" />
+    <None Remove="Images\Buttons\Disabled\RotateRight.png" />
+    <None Remove="Images\Buttons\Disabled\SaveIcon.png" />
+    <None Remove="Images\Buttons\Disabled\SaveIconAs.png" />
+    <None Remove="Images\Buttons\Enabled\About.png" />
+    <None Remove="Images\Buttons\Enabled\AddImage.png" />
+    <None Remove="Images\Buttons\Enabled\DeleteImage.png" />
+    <None Remove="Images\Buttons\Enabled\ExportImage.png" />
+    <None Remove="Images\Buttons\Enabled\FlipHorizontal.png" />
+    <None Remove="Images\Buttons\Enabled\FlipVertical.png" />
+    <None Remove="Images\Buttons\Enabled\NewIcon.png" />
+    <None Remove="Images\Buttons\Enabled\OpenIcon.png" />
+    <None Remove="Images\Buttons\Enabled\Resize.png" />
+    <None Remove="Images\Buttons\Enabled\RotateLeft.png" />
+    <None Remove="Images\Buttons\Enabled\RotateRight.png" />
+    <None Remove="Images\Buttons\Enabled\SaveIcon.png" />
+    <None Remove="Images\Buttons\Enabled\SaveIconAs.png" />
     <None Remove="Images\CatOrange\Cat-128.png" />
     <None Remove="Images\CatOrange\Cat-16.png" />
     <None Remove="Images\CatOrange\Cat-20.png" />
@@ -30,6 +51,27 @@
 
   <ItemGroup>
     <Content Include="Images\CatOrange.ico" />
+    <Resource Include="Images\Buttons\Disabled\DeleteImage.png" />
+    <Resource Include="Images\Buttons\Disabled\ExportImage.png" />
+    <Resource Include="Images\Buttons\Disabled\FlipHorizontal.png" />
+    <Resource Include="Images\Buttons\Disabled\FlipVertical.png" />
+    <Resource Include="Images\Buttons\Disabled\RotateLeft.png" />
+    <Resource Include="Images\Buttons\Disabled\RotateRight.png" />
+    <Resource Include="Images\Buttons\Disabled\SaveIcon.png" />
+    <Resource Include="Images\Buttons\Disabled\SaveIconAs.png" />
+    <Resource Include="Images\Buttons\Enabled\About.png" />
+    <Resource Include="Images\Buttons\Enabled\AddImage.png" />
+    <Resource Include="Images\Buttons\Enabled\DeleteImage.png" />
+    <Resource Include="Images\Buttons\Enabled\ExportImage.png" />
+    <Resource Include="Images\Buttons\Enabled\FlipHorizontal.png" />
+    <Resource Include="Images\Buttons\Enabled\FlipVertical.png" />
+    <Resource Include="Images\Buttons\Enabled\NewIcon.png" />
+    <Resource Include="Images\Buttons\Enabled\OpenIcon.png" />
+    <Resource Include="Images\Buttons\Enabled\Resize.png" />
+    <Resource Include="Images\Buttons\Enabled\RotateLeft.png" />
+    <Resource Include="Images\Buttons\Enabled\RotateRight.png" />
+    <Resource Include="Images\Buttons\Enabled\SaveIcon.png" />
+    <Resource Include="Images\Buttons\Enabled\SaveIconAs.png" />
     <Resource Include="Images\CatOrange\Cat-128.png" />
     <Resource Include="Images\CatOrange\Cat-16.png" />
     <Resource Include="Images\CatOrange\Cat-20.png" />
@@ -42,8 +84,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MahApps.Metro.IconPacks" Version="5.0.0" />
-    <PackageReference Include="System.Drawing.Common" Version="8.0.6" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.10" />
   </ItemGroup>
 
 </Project>

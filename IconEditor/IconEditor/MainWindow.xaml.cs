@@ -207,13 +207,12 @@ namespace IconEditor
             var frames = new List<IconFrame>();
             foreach (var view in FrameViews)
             {
-                var bitmap = view.Size != view.BitmapSize
-                    ? view.GetResizedBitmap()
-                    : view.Bitmap;
+                if (view.Size != view.BitmapSize)
+                    view.Bitmap = view.GetResizedBitmap();
                 using (var stream = new MemoryStream())
                 {
-                    bitmap.Save(stream, ImageFormat.Png);
-                    frames.Add(new IconFrame(bitmap.Width, bitmap.Height, (int)stream.Length, stream.ToArray()));
+                    view.Bitmap.Save(stream, ImageFormat.Png);
+                    frames.Add(new IconFrame(view.Bitmap.Width, view.Bitmap.Height, (int)stream.Length, stream.ToArray()));
                 }
             }
             // Записываем значок в файл.
@@ -238,6 +237,9 @@ namespace IconEditor
                         writer.Write(frame.Image);
                 }
             }
+            var index = ImagesListBox.SelectedIndex;
+            UpdateImagesListBox();
+            ImagesListBox.SelectedIndex = index;
         }
 
         /// <summary>

@@ -6,8 +6,7 @@
 - Платформа: NET 8.0
 
 ## Пакеты NuGet верхнего уровня:
-- MahApps.Metro.IconPacks 5.0.0
-- System.Drawing.Common 8.0.6
+- System.Drawing.Common 8.0.10
 
 ---
 # IconsApp - Подбор значков приложения

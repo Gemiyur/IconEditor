@@ -69,9 +69,7 @@ namespace IconEditor
             Multiselect = true,
             ValidateNames = true,
             Title = "Добавить изображение",
-            Filter = "Файлы изображений|*.bmp;*.dib;*.jfif;*.jpe;*.jpeg;*.jpg;*.png"
-            // Так было изначально. Все поддерживаемые форматы. Убрал часть форматов.
-            //Filter = "Файлы изображений|*.bmp;*.dib;*.emf;*.exif;*.jfif;*.jpe;*.jpeg;*.jpg;*.png;*.rle;*.tif;*.tiff;*.wmf"
+            Filter = "Файлы изображений|*.bmp;*.dib;*.gif;*.jfif;*.jpe;*.jpeg;*.jpg;*.png"
         };
 
         private readonly SaveFileDialog SaveIconDialog = new()

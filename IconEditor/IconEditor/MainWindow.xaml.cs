@@ -110,20 +110,8 @@ namespace IconEditor
             {
                 SizesComboBox.Items.Add($"{size} x {size}");
             }
-            foreach (var scale in App.Scales)
-            {
-                ScalesComboBox.Items.Add($"{(int)(scale * 100)} %");
-                ScalesComboBox.SelectedIndex = 0;
-            }
             ImagesListBox.ItemsSource = FrameViews;
         }
-
-        /// <summary>
-        /// Возвращает указанный размер с учётом масштаба экрана.
-        /// </summary>
-        /// <param name="size">Размер.</param>
-        /// <returns>Размер с учётом масштаба экрана.</returns>
-        private double ScaledSize(int size) => size / App.Scales[ScalesComboBox.SelectedIndex];
 
         /// <summary>
         /// Сортирует список представлений кадров значка по размеру.
@@ -295,9 +283,8 @@ namespace IconEditor
             PreviewImage.Source = view.BitmapFrame;
             if (SizesComboBox.SelectedIndex == App.ImageSizes.IndexOf(view.Size))
             {
-                var scaledSize = ScaledSize(view.Size);
-                PreviewImage.Width = scaledSize;
-                PreviewImage.Height = scaledSize;
+                PreviewImage.Width = view.Size;
+                PreviewImage.Height = view.Size;
             }
             else
             {
@@ -327,9 +314,8 @@ namespace IconEditor
             SortFrameViews();
             UpdateImagesListBox();
             ImagesListBox.SelectedItem = view;
-            var scaledSize = ScaledSize(size);
-            PreviewImage.Width = scaledSize;
-            PreviewImage.Height = scaledSize;
+            PreviewImage.Width = size;
+            PreviewImage.Height = size;
         }
 
         private void SizesComboBox_DropDownOpened(object sender, EventArgs e)
@@ -373,16 +359,6 @@ namespace IconEditor
             view.FlipVertical();
             PreviewImage.Source = view.BitmapFrame;
             IconChanged = true;
-        }
-
-        private void ScalesComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (PreviewImage.Source == null)
-                return;
-            var view = (IconFrameView)ImagesListBox.SelectedItem;
-            var scaledSize = ScaledSize(view.Size);
-            PreviewImage.Width = scaledSize;
-            PreviewImage.Height = scaledSize;
         }
 
         #endregion

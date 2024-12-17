@@ -19,11 +19,6 @@ namespace IconEditor
         public static readonly List<int> ImageSizes = [16, 20, 24, 32, 40, 48, 64, 96, 128, 192, 256, 384, 512];
 
         /// <summary>
-        /// Список масштабов экрана Windows 10.
-        /// </summary>
-        public static readonly List<double> Scales = [1.0, 1.25, 1.5, 1.75];
-
-        /// <summary>
         /// Аналог System.Windows.Forms.Application.DoEvents.
         /// </summary>
         public static void DoEvents()

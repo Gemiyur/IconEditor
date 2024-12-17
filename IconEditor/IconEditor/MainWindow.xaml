@@ -161,7 +161,7 @@
             </ToolBar>
         </ToolBarTray>
 
-        <!-- Список изображений, предварительный просмотр, редактор и масштабы экрана -->
+        <!-- Список изображений, предварительный просмотр и редактор -->
         <Grid Grid.Row="2">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -185,7 +185,7 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
 
-                <!-- Предварительный просмотр, редактор и масштабы экрана -->
+                <!-- Предварительный просмотр и редактор -->
                 <Border Grid.Column="1" BorderBrush="Black" BorderThickness="0.25">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -200,122 +200,90 @@
                             <Image x:Name="PreviewImage" Stretch="Uniform" />
                         </ScrollViewer>
 
-                        <!-- Редактор и масштабы экрана -->
-                        <StackPanel Grid.Column="1" Width="160" Margin="20,0,20,0" >
-                            <!-- Редактор -->
-                            <StackPanel x:Name="EditorPanel" IsEnabled="False">
-                                <!-- Заголовок -->
-                                <TextBlock Text="Изображение"
+                        <!-- Редактор -->
+                        <StackPanel Grid.Column="1" x:Name="EditorPanel" Width="160" Margin="20,0,20,0" IsEnabled="False">
+                            <!-- Заголовок -->
+                            <TextBlock Text="Изображение"
                                            FontWeight="Bold"
                                            HorizontalAlignment="Center"
                                            Margin="0,20,0,0" />
 
-                                <!-- Размеры изображения -->
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="20" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="35" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    
-                                    <TextBlock Grid.Row="1" Grid.Column="0"
+                            <!-- Размеры изображения -->
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="35" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0"
                                                Text="Размер"
                                                VerticalAlignment="Center" />
-                                    <ComboBox Grid.Row="1" Grid.Column="2"
+                                <ComboBox Grid.Row="1" Grid.Column="2"
                                               x:Name="SizesComboBox"
                                               SelectionChanged="SizesComboBox_SelectionChanged"
                                               DropDownOpened="SizesComboBox_DropDownOpened"
                                               DropDownClosed="SizesComboBox_DropDownClosed" />
-                                </Grid>
+                            </Grid>
 
-                                <!-- Поворот и отражение изображения -->
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="20" />
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="20" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="20" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    
-                                    <TextBlock Grid.Row="1" Grid.Column="0"
+                            <!-- Поворот и отражение изображения -->
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="20" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="20" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0"
                                                Text="Повернуть"
                                                VerticalAlignment="Center" />
-                                    <Button Grid.Row="1" Grid.Column="1"
+                                <Button Grid.Row="1" Grid.Column="1"
                                             x:Name="RotateLeftButton"
                                             Style="{StaticResource EditorButtonStyle}"
                                             ToolTip="Против часовой стрелки"
                                             Click="RotateLeftButton_Click">
-                                        <Image Source="Images\Buttons\Disabled\RotateLeft.png"
+                                    <Image Source="Images\Buttons\Disabled\RotateLeft.png"
                                                Style="{StaticResource EditorIconStyle}" />
-                                    </Button>
-                                    <Button Grid.Row="1" Grid.Column="3"
+                                </Button>
+                                <Button Grid.Row="1" Grid.Column="3"
                                             x:Name="RotateRightButton"
                                             Style="{StaticResource EditorButtonStyle}"
                                             ToolTip="По часовой стрелке"
                                             Click="RotateRightButton_Click">
-                                        <Image Source="Images\Buttons\Disabled\RotateRight.png"
+                                    <Image Source="Images\Buttons\Disabled\RotateRight.png"
                                                Style="{StaticResource EditorIconStyle}" />
-                                    </Button>
-                                    <TextBlock Grid.Row="5" Grid.Column="0"
+                                </Button>
+                                <TextBlock Grid.Row="5" Grid.Column="0"
                                                Text="Отразить"
                                                VerticalAlignment="Center" />
-                                    <Button Grid.Row="5" Grid.Column="1"
+                                <Button Grid.Row="5" Grid.Column="1"
                                             x:Name="FlipHorizontalButton"
                                             Style="{StaticResource EditorButtonStyle}"
                                             ToolTip="По горизонтали"
                                             Click="FlipHorizontalButton_Click">
-                                        <Image Source="Images\Buttons\Disabled\FlipHorizontal.png"
+                                    <Image Source="Images\Buttons\Disabled\FlipHorizontal.png"
                                                Style="{StaticResource EditorIconStyle}" />
-                                    </Button>
-                                    <Button Grid.Row="5" Grid.Column="3"
+                                </Button>
+                                <Button Grid.Row="5" Grid.Column="3"
                                             x:Name="FlipVerticalButton"
                                             Style="{StaticResource EditorButtonStyle}"
                                             ToolTip="По вертикали"
                                             Click="FlipVerticalButton_Click">
-                                        <Image Source="Images\Buttons\Disabled\FlipVertical.png"
+                                    <Image Source="Images\Buttons\Disabled\FlipVertical.png"
                                                Style="{StaticResource EditorIconStyle}" />
-                                    </Button>
-                                </Grid>
-                            </StackPanel>
-
-                            <!-- Масштабы экрана -->
-                            <StackPanel>
-                                <!-- Заголовок -->
-                                <TextBlock Text="Масштаб экрана"
-                                           FontWeight="Bold"
-                                           HorizontalAlignment="Center"
-                                           Margin="0,20,0,0" />
-
-                                <!-- Масштабы -->
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="20" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="25" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    
-                                    <TextBlock Grid.Row="1" Grid.Column="0"
-                                               Text="Масштаб"
-                                               VerticalAlignment="Center" />
-                                    <ComboBox Grid.Row="1" Grid.Column="2"
-                                              x:Name="ScalesComboBox"
-                                              SelectionChanged="ScalesComboBox_SelectionChanged" />
-                                </Grid>
-                            </StackPanel>
+                                </Button>
+                            </Grid>
                         </StackPanel>
                     </Grid>
                 </Border>

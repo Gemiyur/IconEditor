@@ -12,8 +12,6 @@ namespace IconEditor
 {
     #region Задачи (TODO).
 
-    // TODOL: Сделать показ курсора ожидания там, где это надо.
-
     #endregion
 
     /// <summary>

@@ -172,6 +172,7 @@ namespace IconEditor
             // Добавляем представления кадров значка.
             foreach (var frame in frames)
             {
+                // TODO: Вываливается по исключению для сторонних файлов значков.
                 using (var stream = new MemoryStream())
                 {
                     stream.Write(frame.Image);

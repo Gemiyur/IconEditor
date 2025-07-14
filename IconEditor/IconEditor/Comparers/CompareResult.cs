@@ -1,23 +1,22 @@
-﻿namespace IconEditor.Comparers
+﻿namespace IconEditor.Comparers;
+
+/// <summary>
+/// Статический класс методов для результата сравнения.
+/// </summary>
+public static class CompareResult
 {
     /// <summary>
-    /// Статический класс методов для результата сравнения.
+    /// Возвращает инвертированный результат сравнения.
     /// </summary>
-    public static class CompareResult
+    /// <param name="compareResult">Результат сравнения.</param>
+    /// <returns>Инвертированный результат сравнения.</returns>
+    public static int Invert(int compareResult)
     {
-        /// <summary>
-        /// Возвращает инвертированный результат сравнения.
-        /// </summary>
-        /// <param name="compareResult">Результат сравнения.</param>
-        /// <returns>Инвертированный результат сравнения.</returns>
-        public static int Invert(int compareResult)
-        {
-            if (compareResult < 0)
-                return 1;
-            if (compareResult > 0)
-                return -1;
-            else
-                return 0;
-        }
+        if (compareResult < 0)
+            return 1;
+        if (compareResult > 0)
+            return -1;
+        else
+            return 0;
     }
 }

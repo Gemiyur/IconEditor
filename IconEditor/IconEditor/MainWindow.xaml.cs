@@ -89,7 +89,6 @@ public partial class MainWindow : Window
         ImageFormat.Png
     ];
 
-
     #endregion
 
     /// <summary>

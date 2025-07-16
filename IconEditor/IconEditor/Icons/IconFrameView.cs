@@ -20,7 +20,7 @@ public class IconFrameView : INotifyPropertyChanged
 
     public int BitmapSize => Math.Max(Bitmap.Width, Bitmap.Height);
     
-    public BitmapFrame BitmapFrame { get; set; }
+    public BitmapFrame? BitmapFrame { get; set; }
 
     public IconFrameView(Bitmap bitmap)
     {

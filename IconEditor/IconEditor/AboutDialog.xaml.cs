@@ -33,27 +33,18 @@ public partial class AboutDialog : Window
                 if (i < count - 1)
                     sb.Append('.');
             }
-            version = $"Версия: {sb.ToString()}";
+            version = $"Версия: {sb}";
         }
-
-        //var company =
-        //    ((AssemblyCompanyAttribute)assembly.GetCustomAttributes(typeof(AssemblyCompanyAttribute), true)
-        //    .First()).Company;
 
         var product =
             ((AssemblyProductAttribute)assembly.GetCustomAttributes(typeof(AssemblyProductAttribute), true)
             .First()).Product;
-
-        var description =
-            ((AssemblyDescriptionAttribute)assembly.GetCustomAttributes(typeof(AssemblyDescriptionAttribute), true)
-            .First()).Description.Replace("\r\n", "\n");
 
         var copyright =
             ((AssemblyCopyrightAttribute)assembly.GetCustomAttributes(typeof(AssemblyCopyrightAttribute), true)
             .First()).Copyright;
 
         ProductTextBlock.Text = product;
-        DescriptionTextBlock.Text = description;
         CopyrightTextBlock.Text = copyright;
         VersionTextBlock.Text = version;
     }

@@ -13,7 +13,7 @@ public class IconFrame
     public short Planes = 0;
     public short BitsPerPixel = 32;
     public int Bytes;
-    public byte[] Image;
+    public byte[] Image = [];
 
     public IconFrame(int width, int height, int bytes, byte[] image)
     {

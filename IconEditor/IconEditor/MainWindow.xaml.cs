@@ -63,7 +63,7 @@ public partial class MainWindow : Window
         Multiselect = true,
         ValidateNames = true,
         Title = "Добавить изображение",
-        Filter = "Файлы изображений|*.bmp;*.dib;*.gif;*.jfif;*.jpe;*.jpeg;*.jpg;*.png"
+        Filter = "Файлы изображений|*.bmp;*.dib;*.gif;*.jpe;*.jpeg;*.jpg;*.png"
     };
 
     private readonly SaveFileDialog SaveIconDialog = new()

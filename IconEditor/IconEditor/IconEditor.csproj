@@ -9,8 +9,7 @@
     <Version>2.1.0</Version>
     <Product>Редактор значков</Product>
     <Copyright>Copyright © Gemiyur 2024</Copyright>
-    <ApplicationIcon>Images\CatOrange.ico</ApplicationIcon>
-    <Title></Title>
+    <ApplicationIcon>Images\IconEditor.ico</ApplicationIcon>
     <Description>Простой редактор значков.</Description>
     <PackageReleaseNotes></PackageReleaseNotes>
     <Company>Gemiyur</Company>
@@ -38,19 +37,11 @@
     <None Remove="Images\Buttons\Enabled\RotateRight.png" />
     <None Remove="Images\Buttons\Enabled\SaveIcon.png" />
     <None Remove="Images\Buttons\Enabled\SaveIconAs.png" />
-    <None Remove="Images\CatOrange\Cat-128.png" />
-    <None Remove="Images\CatOrange\Cat-16.png" />
-    <None Remove="Images\CatOrange\Cat-20.png" />
-    <None Remove="Images\CatOrange\Cat-24.png" />
-    <None Remove="Images\CatOrange\Cat-32.png" />
-    <None Remove="Images\CatOrange\Cat-40.png" />
-    <None Remove="Images\CatOrange\Cat-48.png" />
-    <None Remove="Images\CatOrange\Cat-64.png" />
-    <None Remove="Images\CatOrange\Cat-96.png" />
+    <None Remove="Images\IconEditor.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Images\CatOrange.ico" />
+    <Content Include="Images\IconEditor.ico" />
     <Resource Include="Images\Buttons\Disabled\DeleteImage.png" />
     <Resource Include="Images\Buttons\Disabled\ExportImage.png" />
     <Resource Include="Images\Buttons\Disabled\FlipHorizontal.png" />
@@ -72,15 +63,7 @@
     <Resource Include="Images\Buttons\Enabled\RotateRight.png" />
     <Resource Include="Images\Buttons\Enabled\SaveIcon.png" />
     <Resource Include="Images\Buttons\Enabled\SaveIconAs.png" />
-    <Resource Include="Images\CatOrange\Cat-128.png" />
-    <Resource Include="Images\CatOrange\Cat-16.png" />
-    <Resource Include="Images\CatOrange\Cat-20.png" />
-    <Resource Include="Images\CatOrange\Cat-24.png" />
-    <Resource Include="Images\CatOrange\Cat-32.png" />
-    <Resource Include="Images\CatOrange\Cat-40.png" />
-    <Resource Include="Images\CatOrange\Cat-48.png" />
-    <Resource Include="Images\CatOrange\Cat-64.png" />
-    <Resource Include="Images\CatOrange\Cat-96.png" />
+    <Resource Include="Images\IconEditor.png" />
   </ItemGroup>
 
   <ItemGroup>

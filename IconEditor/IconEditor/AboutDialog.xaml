@@ -25,7 +25,9 @@
             <ColumnDefinition Width="10" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Stretch="None" Source="Images/CatOrange/Cat-96.png" />
+        
+        <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Width="96" Height="96" Source="Images/IconEditor.png" />
+
         <TextBlock Grid.Row="0" Grid.Column="2" x:Name="ProductTextBlock"
                    Foreground="Navy"
                    FontSize="16"

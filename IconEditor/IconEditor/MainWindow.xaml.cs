@@ -236,7 +236,7 @@ public partial class MainWindow : Window
     /// </summary>
     private void SaveIconIfChanged()
     {
-        if (!IconChanged ||
+        if (!IconChanged || !FrameViews.Any() ||
             MessageBox.Show("Значок был изменён. Сохранить его?", Title, MessageBoxButton.YesNo) != MessageBoxResult.Yes)
         {
             return;

@@ -32,7 +32,6 @@
     <None Remove="Images\Buttons\Enabled\FlipVertical.png" />
     <None Remove="Images\Buttons\Enabled\NewIcon.png" />
     <None Remove="Images\Buttons\Enabled\OpenIcon.png" />
-    <None Remove="Images\Buttons\Enabled\Resize.png" />
     <None Remove="Images\Buttons\Enabled\RotateLeft.png" />
     <None Remove="Images\Buttons\Enabled\RotateRight.png" />
     <None Remove="Images\Buttons\Enabled\SaveIcon.png" />
@@ -58,7 +57,6 @@
     <Resource Include="Images\Buttons\Enabled\FlipVertical.png" />
     <Resource Include="Images\Buttons\Enabled\NewIcon.png" />
     <Resource Include="Images\Buttons\Enabled\OpenIcon.png" />
-    <Resource Include="Images\Buttons\Enabled\Resize.png" />
     <Resource Include="Images\Buttons\Enabled\RotateLeft.png" />
     <Resource Include="Images\Buttons\Enabled\RotateRight.png" />
     <Resource Include="Images\Buttons\Enabled\SaveIcon.png" />

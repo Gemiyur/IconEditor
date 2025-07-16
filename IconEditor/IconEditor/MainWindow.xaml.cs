@@ -43,7 +43,7 @@ public partial class MainWindow : Window
     /// <summary>
     /// Список представлений кадров значка.
     /// </summary>
-    private List<IconFrameView> FrameViews = [];
+    private readonly List<IconFrameView> FrameViews = [];
 
     #region Диалоги открытия и сохранения файлов.
 

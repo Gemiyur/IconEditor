@@ -135,7 +135,7 @@ public partial class MainWindow : Window
     /// Загружает значок из файла с указанным именем.
     /// </summary>
     /// <param name="fileName">Имя фойла с полным путём.</param>
-    private void LoadIcon(string fileName)
+    private bool LoadIcon(string fileName)
     {
         // Считываем значок из файла.
         var frames = new List<IconFrame>();
@@ -147,14 +147,14 @@ public partial class MainWindow : Window
                 // Заголовок значка.
                 if (reader.ReadInt16() != 0 || reader.ReadInt16() != IconType)
                 {
-                    MessageBox.Show("Файл не является файлом значка.", Title);
-                    return;
+                    MessageBox.Show($"Файл {fileName} не является файлом значка.", Caption);
+                    return false;
                 }
                 int count = reader.ReadInt16();
                 if (count < 1)
                 {
                     // Значок не содержит кадров/изображений.
-                    return;
+                    return true;
                 }
                 // Кадры значка без изображений.
                 for (var i = 0; i < count; i++)
@@ -165,16 +165,25 @@ public partial class MainWindow : Window
             }
         }
         // Добавляем представления кадров значка.
-        foreach (var frame in frames)
+        try
         {
-            // TODO: Вываливается по исключению для сторонних файлов значков.
-            using (var stream = new MemoryStream())
+            foreach (var frame in frames)
             {
-                stream.Write(frame.Image);
-                var bitmap = new Bitmap(stream);
-                FrameViews.Add(new IconFrameView(bitmap));
+                // Может выбрасывать исключение для сторонних файлов значков.
+                using (var stream = new MemoryStream())
+                {
+                    stream.Write(frame.Image);
+                    var bitmap = new Bitmap(stream);
+                    FrameViews.Add(new IconFrameView(bitmap));
+                }
             }
         }
+        catch
+        {
+            MessageBox.Show($"Кадры файла значка {fileName} имеют неподдерживаемый формат.", Caption);
+            return false;
+        }
+        return true;
     }
 
     /// <summary>
@@ -375,9 +384,16 @@ public partial class MainWindow : Window
         if (OpenIconDialog.ShowDialog() != true)
             return;
         FrameViews.Clear();
-        LoadIcon(OpenIconDialog.FileName);
+        if (LoadIcon(OpenIconDialog.FileName))
+        {
+            FileName = OpenIconDialog.FileName;
+        }
+        else
+        {
+            FileName = string.Empty;
+            FrameViews.Clear();
+        }
         UpdateImagesListBox();
-        FileName = OpenIconDialog.FileName;
         UpdateTitle();
         IconChanged = false;
     }

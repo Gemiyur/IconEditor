@@ -35,12 +35,4 @@ public partial class App : Application
             return ImageSizes.Last();
         return ImageSizes.Last(x => x < size);
     }
-
-    // TODO: Заменить в коде SimpleBool сравнением с true.
-    /// <summary>
-    /// Возвращает логическое значение из логического значения, допускающего неопределённое значение.
-    /// </summary>
-    /// <param name="value">Логическое значение, допускающее неопределённое значение.</param>
-    /// <returns>Логическое значение.</returns>
-    public static bool SimpleBool(bool? value) => value ?? false;
 }

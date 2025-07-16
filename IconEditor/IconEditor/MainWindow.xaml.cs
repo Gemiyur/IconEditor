@@ -238,7 +238,7 @@ public partial class MainWindow : Window
             IconChanged = false;
             return;
         }
-        if (App.SimpleBool(SaveIconDialog.ShowDialog()))
+        if (SaveIconDialog.ShowDialog() == true)
         {
             SaveIcon(SaveIconDialog.FileName);
             IconChanged = false;
@@ -372,7 +372,7 @@ public partial class MainWindow : Window
     private void OpenIcon_Executed(object sender, ExecutedRoutedEventArgs e)
     {
         SaveIconIfChanged();
-        if (!App.SimpleBool(OpenIconDialog.ShowDialog()))
+        if (OpenIconDialog.ShowDialog() != true)
             return;
         FrameViews.Clear();
         LoadIcon(OpenIconDialog.FileName);
@@ -401,7 +401,7 @@ public partial class MainWindow : Window
             IconChanged = false;
             return;
         }
-        if (!App.SimpleBool(SaveIconDialog.ShowDialog()))
+        if (SaveIconDialog.ShowDialog() != true)
             return;
         SaveIcon(SaveIconDialog.FileName);
         FileName = SaveIconDialog.FileName;
@@ -423,7 +423,7 @@ public partial class MainWindow : Window
     private void SaveIconAs_Executed(object sender, ExecutedRoutedEventArgs e)
     {
         SaveIconIfChanged();
-        if (!App.SimpleBool(SaveIconDialog.ShowDialog()))
+        if (SaveIconDialog.ShowDialog() != true)
             return;
         SaveIcon(SaveIconDialog.FileName);
         FileName = SaveIconDialog.FileName;
@@ -442,7 +442,7 @@ public partial class MainWindow : Window
 
     private void AddImage_Executed(object sender, ExecutedRoutedEventArgs e)
     {
-        if (!App.SimpleBool(OpenImageDialog.ShowDialog()) || OpenImageDialog.FileNames.Length < 1)
+        if (OpenImageDialog.ShowDialog() != true || OpenImageDialog.FileNames.Length < 1)
         {
             return;
         }
@@ -500,7 +500,7 @@ public partial class MainWindow : Window
 
     private void ExportImage_Executed(object sender, ExecutedRoutedEventArgs e)
     {
-        if (App.SimpleBool(SaveImageDialog.ShowDialog()))
+        if (SaveImageDialog.ShowDialog() == true)
         {
             ((IconFrameView)ImagesListBox.SelectedItem).Bitmap.Save(
                 SaveImageDialog.FileName, ImageFormats[SaveImageDialog.FilterIndex - 1]);

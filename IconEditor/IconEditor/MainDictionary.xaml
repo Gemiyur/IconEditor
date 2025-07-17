@@ -25,4 +25,36 @@
         <Setter Property="Background" Value="Transparent" />
     </Style>
 
+    <SolidColorBrush x:Key="SelectedListItemBackgroundBrush" Color="#FFCBE8F6" />
+
+    <SolidColorBrush x:Key="MouseOverListItemBackgroundBrush" Color="AliceBlue" />
+
+    <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border Name="Border" Padding="2">
+                        <ContentPresenter />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="Background"
+                                    Value="{StaticResource SelectedListItemBackgroundBrush}" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="False" />
+                                <Condition Property="IsMouseOver" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="Border" Property="Background"
+                                        Value="{StaticResource MouseOverListItemBackgroundBrush}" />
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

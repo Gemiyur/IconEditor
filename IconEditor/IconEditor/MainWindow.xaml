@@ -172,6 +172,7 @@
                 
                 <!-- Список изображений -->
                 <ListBox Grid.Column="0" x:Name="ImagesListBox"
+                         ItemContainerStyle="{StaticResource ListBoxItemStyle}"
                          Width="200"
                          SelectionMode="Extended"
                          SelectionChanged="ImagesListBox_SelectionChanged">

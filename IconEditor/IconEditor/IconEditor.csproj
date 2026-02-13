@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
@@ -61,10 +61,6 @@
     <Resource Include="Images\Buttons\Enabled\SaveIcon.png" />
     <Resource Include="Images\Buttons\Enabled\SaveIconAs.png" />
     <Resource Include="Images\IconEditor.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="8.0.10" />
   </ItemGroup>
 
 </Project>
